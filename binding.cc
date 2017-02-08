@@ -12,6 +12,10 @@ using namespace v8;
 #include "DeviceEvents.cpp"
 #include "MtpLite.cpp"
 
+NAN_METHOD(MakeArray) {
+  info.GetReturnValue().Set(Nan::New<v8::Array>());
+}
+
 NAN_METHOD(Detect) {
   HeapSetInformation(nullptr, HeapEnableTerminationOnCorruption, nullptr, 0);
   HRESULT hr = CoInitializeEx(nullptr, COINIT_MULTITHREADED);
@@ -104,6 +108,7 @@ NAN_MODULE_INIT(Initialize) {
   NAN_EXPORT(target, SendFile);
   NAN_EXPORT(target, GetFile);
   NAN_EXPORT(target, DelFile);
+  NAN_EXPORT(target, MakeArray);
 }
 
 NODE_MODULE(MtpLite, Initialize)
