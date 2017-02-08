@@ -1,3 +1,3 @@
-const MtpLite = require('bindings')('MtpLite');
+const MtpLite = require('./build/Release/MtpLite');
 
 module.exports = MtpLite;
