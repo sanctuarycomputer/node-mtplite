@@ -1,0 +1,3 @@
+[submodule "MtpLite"]
+    path = MtpLite
+    url = git://github.com/facebook/three20.git
