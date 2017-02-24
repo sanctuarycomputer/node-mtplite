@@ -17,7 +17,7 @@
           ],
           "cflags!": [ "-fno-exceptions" ],
           "cflags": [ "-std=c++11" ],
-          "cflags_cc!": [ "-fno-exceptions" ]
+          "cflags_cc!": [ "-fno-exceptions" ],
         }],
 
         ['OS == "mac"', {
@@ -26,6 +26,12 @@
           ],
           "include_dirs": [
             "<!(node -e \"require('nan')\")"
+          ],
+          'xcode_settings': {
+            'MACOSX_DEPLOYMENT_TARGET': '10.7',
+          },
+          "libraries": [
+            "/usr/local/lib/libmtp.dylib"
           ],
         }],
 
