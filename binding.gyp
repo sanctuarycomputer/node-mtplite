@@ -25,6 +25,7 @@
             "binding_mac.cc"
           ],
           "include_dirs": [
+            "./Posix",
             "<!(node -e \"require('nan')\")"
           ],
           'xcode_settings': {
