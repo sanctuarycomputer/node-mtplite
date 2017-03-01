@@ -15,13 +15,12 @@ using namespace v8;
 #define XML_BUFSIZE 0x10000
 #define LIBMTP_FILES_AND_FOLDERS_ROOT 0xffffffff
 
+#include "./Posix/Utils/pathutils.cc"
 #include "./Posix/Detect.cc"
 #include "./Posix/List.cc"
 #include "./Posix/SendFile.cc"
 #include "./Posix/GetFile.cc"
-
-NAN_METHOD(DelFile) {
-}
+#include "./Posix/DelFile.cc"
 
 NAN_MODULE_INIT(Initialize) {
   NAN_EXPORT(target, Detect);
