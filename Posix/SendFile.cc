@@ -60,6 +60,7 @@ NAN_METHOD(SendFile) {
       }
       LIBMTP_destroy_file_t(genfile);
     }
+    LIBMTP_Release_Device(device);
   }
 
   delete [] from_path;

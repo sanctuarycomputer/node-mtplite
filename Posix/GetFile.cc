@@ -29,6 +29,8 @@ NAN_METHOD(GetFile) {
       results->Set(Nan::New("didSucceed").ToLocalChecked(), Nan::True());
       results->Set(Nan::New("file").ToLocalChecked(), Nan::New(cStr2).ToLocalChecked());
     }
+
+    LIBMTP_Release_Device(device);
   }
 
   delete [] cStr1;
