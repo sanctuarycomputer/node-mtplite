@@ -43,6 +43,7 @@ NAN_METHOD(Detect) {
       free(modelname);
     }
     deviceArray->Set(i, obj);
+    LIBMTP_Release_Device(device);
   }
   free(rawdevices);
   info.GetReturnValue().Set(deviceArray);
