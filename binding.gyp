@@ -32,7 +32,7 @@
             'MACOSX_DEPLOYMENT_TARGET': '10.7',
           },
           "libraries": [
-            "/usr/local/lib/libmtp.dylib"
+            "-L/usr/local/lib", "libmtp.a"
           ],
         }],
 
