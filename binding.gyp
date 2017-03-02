@@ -28,11 +28,8 @@
             "./Posix",
             "<!(node -e \"require('nan')\")"
           ],
-          'xcode_settings': {
-            'MACOSX_DEPLOYMENT_TARGET': '10.7',
-          },
           "libraries": [
-            "-L/usr/local/lib", "libmtp.a"
+            "/usr/local/lib/libmtp.a"
           ],
         }],
 
