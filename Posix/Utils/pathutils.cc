@@ -20,16 +20,6 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#ifndef PATHUTILS_H_INCLUSION_GUARD
-#define PATHUTILS_H_INCLUSION_GUARD
-int parse_path (char *, LIBMTP_file_t *, LIBMTP_folder_t *);
-LIBMTP_filetype_t find_filetype (const char *);
-int progress (const uint64_t, const uint64_t, void const * const);
-#ifndef HAVE_LIBGEN_H
-static char *basename(char *in);
-#endif
-#endif
-
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
@@ -144,7 +134,9 @@ find_filetype (const char * filename)
 #ifdef __WIN32__
   ptype = strrchr(filename, '.');
 #else
-  ptype = rindex(filename,'.');
+  std::string ptypeConst = rindex(filename,'.');
+  ptype = new char[ptypeConst.length() + 1];
+  strcpy(ptype, ptypeConst.c_str());
 #endif
   // This accounts for the case with a filename without any "." (period).
   if (!ptype) {
@@ -231,17 +223,3 @@ find_filetype (const char * filename)
   printf("type: %s, %d\n", ptype, filetype);
   return filetype;
 }
-
-/* Function that compensate for missing libgen.h on Windows */
-#ifndef HAVE_LIBGEN_H
-static char *basename(char *in) {
-  char *p;
-
-  if (in == NULL)
-    return NULL;
-  p = in + strlen(in) - 1;
-  while (*p != '\\' && *p != '/' && *p != ':')
-    { p--; }
-  return ++p;
-}
-#endif

@@ -34,7 +34,16 @@
         }],
 
         ['OS == "linux"', {
-
+          "sources": [
+            "binding_mac.cc"
+          ],
+          "include_dirs": [
+            "./Posix",
+            "<!(node -e \"require('nan')\")"
+          ],
+          "libraries": [
+            "/usr/lib/x86_64-linux-gnu/libmtp.so"
+          ],
         }]
       ]
     }

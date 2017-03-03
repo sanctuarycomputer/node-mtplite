@@ -3,7 +3,8 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include "util.h"
+// May not be necessary, leaving here for Mac incase...
+#include "./Utils/util.cc"
 
 NAN_METHOD(SendFile) {
   LIBMTP_folder_t *folders;
@@ -67,4 +68,3 @@ NAN_METHOD(SendFile) {
   delete [] to_path;
   info.GetReturnValue().Set(results);
 }
-
