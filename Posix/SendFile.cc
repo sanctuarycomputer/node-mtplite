@@ -59,6 +59,8 @@ NAN_METHOD(SendFile) {
         results->Set(Nan::New("didSucceed").ToLocalChecked(), Nan::True());
         results->Set(Nan::New("newObjectId").ToLocalChecked(), Nan::New(genfile->item_id));
       }
+      printf("Got hereg\n");
+
       LIBMTP_destroy_file_t(genfile);
     }
     LIBMTP_Release_Device(device);

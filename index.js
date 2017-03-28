@@ -1,8 +1,11 @@
 const MtpLite = require('./build/Release/MtpLite');
 
+console.log(MtpLite.DelFile(482))
+
+/*
 const findLpConfigID = (contents) => {
   return Object.keys(contents).find(key => {
-    if (contents[key]['OBJECT_ORIGINAL_FILE_NAME'] === 'lpConfig.db3') return key;
+    if (contents[key]['OBJECT_ORIGINAL_FILE_NAME'] === 'Version.59.20170301T2258-GMT.txt') return key;
     return false;
   });
 }
@@ -26,5 +29,5 @@ if (newLpConfigID) {
 } else {
   console.log(`~~~> SUCCESS: lpConfig.db3 was not immediately recreated after a MTP-DelFile operation.`)
 }
-
+*/
 module.exports = MtpLite;
