@@ -44,6 +44,7 @@
           "libraries": [
             "/usr/lib/x86_64-linux-gnu/libmtp.so"
           ],
+          "cflags": [ "-static-libstdc++" ]
         }]
       ]
     }
